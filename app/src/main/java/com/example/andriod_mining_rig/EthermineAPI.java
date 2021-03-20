@@ -7,5 +7,5 @@ import retrofit2.http.GET;
 
 public interface EthermineAPI {
     @GET("currentStats")
-    Call<List<APIResponse>> getResponses();
+    Call<CurrentStats> getCurrentStatsData();
 }
