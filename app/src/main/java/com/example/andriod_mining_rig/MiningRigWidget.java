@@ -1,6 +1,5 @@
 package com.example.andriod_mining_rig;
 
-import android.app.AlarmManager;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
@@ -33,7 +32,6 @@ public class MiningRigWidget extends AppWidgetProvider {
 
     @Override
     public void onEnabled(Context context) {
-        // Enter relevant functionality for when the first widget is created
         System.out.println ("creating widget");
     }
 
