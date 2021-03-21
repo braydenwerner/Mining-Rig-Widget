@@ -3,5 +3,7 @@
     <string name="appwidget_text">From strings.xml</string>
     <string name="add_widget">Add widget</string>
     <string name="active_workers_header">Active Workers</string>
-    <string name="current_hashrate">Current Hashrate</string>
+    <string name="active_workers">Active Workers To Be Replaced</string>
+    <string name="current_hashrate_header">Current Hashrate</string>
+    <string name="current_hashrate">Current Hashrate To Be Replaced</string>
 </resources>
