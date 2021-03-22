@@ -62,7 +62,7 @@ public class MiningRigWidget extends AppWidgetProvider {
                 CurrentStats currentStats = response.body();
                 CurrentStats.CurrentStatsData currentStatsData = currentStats.getCurrentStatsData();
                 int activeWorkers = currentStatsData.getActiveWorkers();
-                double parsedCurrentHashrate = currentStatsData.getCurrentHashrate() * 0.000001;
+                double parsedCurrentHashrate = currentStatsData.getReportedHashrate() * 0.000001;
                 double parsedAverageHashrate = currentStatsData.getAverageHashrate() * 0.000001;
                 double usdPerHr = currentStatsData.getUsdPerMin() * 60;
                 double usdPerDay = currentStatsData.getUsdPerMin() * 60 * 24;
@@ -99,7 +99,7 @@ public class MiningRigWidget extends AppWidgetProvider {
     public static void updateTextViewUI(int activeWorkers,
                                         String currentHashrate,
                                         String averageHashrate) {
-        views.setTextViewText(R.id.active_workers, activeWorkers + " Active Workers");
+        views.setTextViewText(R.id.active_workers, activeWorkers + "");
         views.setTextViewText(R.id.current_hashrate, currentHashrate + " MH/s");
         views.setTextViewText(R.id.average_hashrate, averageHashrate + " MH/s");
     }

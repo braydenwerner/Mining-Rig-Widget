@@ -15,6 +15,8 @@ public class CurrentStats {
         private double time;
         @SerializedName("currentHashrate")
         private double currentHashrate;
+        @SerializedName("reportedHashrate")
+        private double reportedHashrate;
         @SerializedName("validShares")
         private double validShares;
         @SerializedName("invalidShares")
@@ -41,6 +43,8 @@ public class CurrentStats {
         public double getCurrentHashrate() {
             return currentHashrate;
         }
+
+        public double getReportedHashrate() { return reportedHashrate; }
 
         public double getValidShares() {
             return validShares;
