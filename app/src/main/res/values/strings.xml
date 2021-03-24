@@ -2,11 +2,11 @@
     <string name="app_name">Android-Mining-Rig</string>
     <string name="add_widget">Add widget</string>
     <string name="active_workers_header">Active Workers</string>
-    <string name="active_workers">Active Workers To Be Replaced</string>
+    <string name="active_workers">5</string>
     <string name="current_hashrate_header">Current Hashrate</string>
-    <string name="current_hashrate">Current Hashrate To Be Replaced</string>
-    <string name="last_updated">Current LastUpdated To Be Replaced</string>
+    <string name="current_hashrate">100 Mh/s</string>
+    <string name="last_updated">12:00</string>
     <string name="tap_update">Tap To Update (Automatic Update every 30 minutes)</string>
     <string name="average_hashrate_header">Average Hashrate</string>
-    <string name="average_hashrate">Average Hashrate To Be Replaced</string>
+    <string name="average_hashrate">100 Mh/s</string>
 </resources>
