@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_centerHorizontal="false"
     android:layout_centerVertical="false"
-    android:background="#16CC83"
+    android:background="#0016CC83"
     android:padding="@dimen/widget_margin">
 
     <TextView
@@ -167,17 +167,5 @@
         android:text="@string/total_ethereum"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/error_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="247dp"
-        android:text="@string/error_text" />
 
 </RelativeLayout>

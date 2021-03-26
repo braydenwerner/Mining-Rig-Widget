@@ -6,9 +6,9 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface EthermineAPI {
-    @GET("currentStats")
+    @GET("miner/53ce4cED03649deeB0588aD4b355d985888df95c/currentStats")
     Call<CurrentStats> getCurrentStatsData();
 
-    @GET("payouts")
+    @GET("miner/53ce4cED03649deeB0588aD4b355d985888df95c/payouts")
     Call<Payouts> getCurrentPayoutsData();
 }

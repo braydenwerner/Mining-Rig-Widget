@@ -45,23 +45,22 @@ public class MiningRigWidget extends AppWidgetProvider {
         views.setOnClickPendingIntent(R.id.last_updated, pendingUpdate);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.ethermine.org/miner/53ce4cED03649deeB0588aD4b355d985888df95c/")
+                .baseUrl("https://api.ethermine.org/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        views.setTextViewText(R.id.error_text, "reached line 52");
         final EthermineAPI ethermineAPI = retrofit.create(EthermineAPI.class);
         Call<CurrentStats> call = ethermineAPI.getCurrentStatsData();
-        views.setTextViewText(R.id.error_text, "reached line 55");
         call.enqueue(new Callback<CurrentStats>() {
             @Override
             public void onResponse(Call<CurrentStats> call, Response<CurrentStats> response) {
-                views.setTextViewText(R.id.error_text, "reached line 59");
                 if (!response.isSuccessful()) {
+                    System.out.println ("Response is not successful 58");
                     System.out.println(response.code());
                     return;
                 }
 
+                System.out.println ("Got successful response");
                 CurrentStats currentStats = response.body();
                 CurrentStats.CurrentStatsData currentStatsData = currentStats.getCurrentStatsData();
                 int activeWorkers = currentStatsData.getActiveWorkers();
@@ -74,6 +73,7 @@ public class MiningRigWidget extends AppWidgetProvider {
                 updateCurrentStatsUI(activeWorkers,
                         formatter.format(parsedCurrentHashrate),
                         formatter.format(parsedAverageHashrate));
+
 //                double usdPerHr = currentStatsData.getUsdPerMin() * 60;
 //                double usdPerDay = currentStatsData.getUsdPerMin() * 60 * 24;
 //                double usdPerWeek = usdPerDay * 7;
@@ -88,8 +88,6 @@ public class MiningRigWidget extends AppWidgetProvider {
 //                System.out.println("usdPerMonth: " + formatter.format(usdPerMonth));
 //                System.out.println("usdPerYr: " + formatter.format(usdPerYr));
 
-
-
                 Call<Payouts> call2 = ethermineAPI.getCurrentPayoutsData();
                 //  get the uncollected ethereum from currentStats api call
                 final double finalUnpaidEthereum = unpaidEthereum;
@@ -97,6 +95,7 @@ public class MiningRigWidget extends AppWidgetProvider {
                     @Override
                     public void onResponse(Call<Payouts> call, Response<Payouts> response) {
                         if (!response.isSuccessful()) {
+                            System.out.println ("Response is not successful 99");
                             System.out.println(response.code());
                             return;
                         }
@@ -119,7 +118,6 @@ public class MiningRigWidget extends AppWidgetProvider {
                     public void onFailure(Call<Payouts> call, Throwable t) {
                         System.out.println("payouts call did not work");
                         System.out.println(t.getMessage());
-                        views.setTextViewText(R.id.error_text, t.getMessage());
                     }
                 });
 
@@ -130,11 +128,8 @@ public class MiningRigWidget extends AppWidgetProvider {
             public void onFailure(Call<CurrentStats> call, Throwable t) {
                 System.out.println("did not work");
                 System.out.println(t.getMessage());
-                views.setTextViewText(R.id.error_text, t.getMessage());
             }
         });
-
-
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
@@ -171,4 +166,3 @@ public class MiningRigWidget extends AppWidgetProvider {
         System.out.println("removing widget");
     }
 }
-
