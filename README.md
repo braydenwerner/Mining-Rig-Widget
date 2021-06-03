@@ -1,4 +1,4 @@
 # Mining-Rig-Widget
-## Uses ethermine.org API to give updated statistics of my mining rig.
+### Uses ethermine.org API to give updated statistics of my mining rig.
 
-![phone-rig-image](https://i.imgur.com/UlkIE4d.jpg)
+<img src="https://i.imgur.com/UlkIE4d.jpg" alt="phone-rig-image" width="200"/>
